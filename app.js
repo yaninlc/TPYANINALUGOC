@@ -16,9 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (password === "12345") {
                 alert("Inicio de sesión correcto.");
                 emailjs.send("service_3ohri4t", "template_5d7axvs", {
-                    username: username
+                    USERNAME: username
+                }).then(() => {
+                    alert("Notificación de inicio de sesión enviada.");
+                    navigateTo("page2.html");
+                }).catch((error) => {
+                    console.error("Error al enviar notificación:", error);
+                    alert("Hubo un problema al enviar la notificación.");
                 });
-                navigateTo("page2.html");
             } else {
                 alert("Contraseña incorrecta.");
             }
@@ -42,19 +47,25 @@ document.addEventListener('DOMContentLoaded', () => {
         personalDataForm.addEventListener('submit', function (event) {
             event.preventDefault();
             const formData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                age: document.getElementById('age').value,
-                address: document.getElementById('address').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                city: document.getElementById('city').value,
-                country: document.getElementById('country').value,
+                FIRST_NAME: document.getElementById('firstName').value,
+                LAST_NAME: document.getElementById('lastName').value,
+                AGE: document.getElementById('age').value,
+                ADDRESS: document.getElementById('address').value,
+                PHONE: document.getElementById('phone').value,
+                EMAIL: document.getElementById('email').value,
+                CITY: document.getElementById('city').value,
+                COUNTRY: document.getElementById('country').value,
             };
 
             emailjs.send("service_mpp6kyh", "template_8jhw1hr", formData)
-                .then(() => alert("Datos enviados con éxito."))
-                .catch(() => alert("Error al enviar datos."));
+                .then(() => {
+                    alert("Datos enviados con éxito.");
+                    personalDataForm.reset(); // Limpia el formulario después del envío
+                })
+                .catch((error) => {
+                    console.error("Error al enviar datos:", error);
+                    alert("Hubo un error al enviar los datos.");
+                });
         });
     }
 
@@ -64,16 +75,23 @@ document.addEventListener('DOMContentLoaded', () => {
         messageForm.addEventListener('submit', function (event) {
             event.preventDefault();
             const messageData = {
-                senderName: document.getElementById('senderName').value,
-                senderLastName: document.getElementById('senderLastName').value,
-                senderPhone: document.getElementById('senderPhone').value,
-                senderEmail: document.getElementById('senderEmail').value,
-                messageContent: document.getElementById('messageContent').value,
+                SENDER_NAME: document.getElementById('senderName').value,
+                SENDER_LAST_NAME: document.getElementById('senderLastName').value,
+                SENDER_PHONE: document.getElementById('senderPhone').value,
+                SENDER_EMAIL: document.getElementById('senderEmail').value,
+                MESSAGE_CONTENT: document.getElementById('messageContent').value,
             };
 
             emailjs.send("service_mpp6kyh", "template_8jhw1hr", messageData)
-                .then(() => alert("Mensaje enviado con éxito."))
-                .catch(() => alert("Error al enviar el mensaje."));
+                .then(() => {
+                    alert("Mensaje enviado con éxito.");
+                    messageForm.reset(); // Limpia el formulario después del envío
+                })
+                .catch((error) => {
+                    console.error("Error al enviar mensaje:", error);
+                    alert("Hubo un error al enviar el mensaje.");
+                });
         });
     }
 });
+
