@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff99cc, #ff66ff);
+    color: #fff;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #ff3399;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button {
+    background-color: #ff66cc;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff3399;
+    transform: scale(1.1);
+}
+
+button:active {
+    background-color: #ff0066;
+}
+
+/* Forms */
+form {
+    background-color: #ffccf2;
+    border-radius: 10px;
+    color: #333;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+form input, form textarea, form select {
+    width: calc(100% - 20px);
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border: 2px solid #ff66cc;
+}
+
+form button {
+    width: calc(100% - 20px);
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.nav-buttons button {
+    margin: 0 10px;
+}
+
+/* Status Messages */
+.status-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ffccf2;
+    background: #ff3399;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}

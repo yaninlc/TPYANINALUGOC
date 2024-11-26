@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 4</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Enviar un Mensaje</h1>
+    </header>
+    <main>
+        <form id="messageForm">
+            <input type="text" id="senderName" placeholder="Nombre" required>
+            <input type="text" id="senderLastName" placeholder="Apellido" required>
+            <input type="text" id="senderPhone" placeholder="Celular" required>
+            <input type="email" id="senderEmail" placeholder="Correo Electrónico" required>
+            <textarea id="messageContent" placeholder="Escriba su mensaje aquí..." required></textarea>
+            <button type="submit">Enviar Mensaje</button>
+            <button type="reset">Limpiar</button>
+        </form>
+        <div id="status-message"></div>
+    </main>
+    <nav>
+        <button onclick="navigateTo('page2.html')">Ir a Página Principal</button>
+    </nav>
+    <footer>© 2024 Yanina Lugo</footer>
+</body>
+</html>
